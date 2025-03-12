@@ -341,7 +341,7 @@ function add_non_root_user() {
     else
         log "非Das-os系统，继续执行重启网络服务的代码段。"
         # 直接执行重启网络服务的代码段
-        if confirm_action "是否要重启网络服务以应用静态 IP 配置？"; then
+        if confirm_action "是否要重启网络服务以应用静态 IP 配置？注：重启后需要先用root登录，再使用 su $non_root_user，切换至刚才创建的非ROOT账户下执行安装脚本2"; then
             while true; do
                 log "请选择重启方式（1：network.service   2:NetworkManager）："
                 read restart_option
